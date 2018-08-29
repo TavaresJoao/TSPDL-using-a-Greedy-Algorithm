@@ -8,6 +8,22 @@ int greedy_algorithm(TSPDL *tspdl, int L)
   // i porto de origem
   // j porto de destino
   int i=0, j, Li=L, cont=0;
+
+  int *trade;
+  trade = create_Vector(tspdl->N);
+
+  trade[cont++]=i;
+  while(Li!=0)
+  {
+    j = getNext(tspdl, Li, i);
+
+    tspdl[i]->was_visited = 1;
+    Li -= tspdl[i]->demand;
+
+    i=j;
+
+    trade[cont++]=i;
+  }
 }
 
 // Função para pegar a melhor opção do próximo porto
