@@ -2,9 +2,9 @@
 
 int main(int argc, char *argv[])
 {
-  if(argc == 2)
+  if(argc == 4)
   {
-    return make_greedy_trade(argv[0], argv[1]);
+    return make_greedy_trade(argv[1], argv[2], stoi(argv[3]));
   }
 
   return 0;

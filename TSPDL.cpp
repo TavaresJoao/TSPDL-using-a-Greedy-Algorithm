@@ -1,8 +1,8 @@
 #include "headers.h"
 
-int make_greedy_trade(string inFile, string outFile)
+int make_greedy_trade(string inFile, string outFile, int inputFile_type)
 {
-  TSPDL *myproblem = import_data(inFile);
+  TSPDL *myproblem = import_data(inFile, inputFile_type);
   if(myproblem == NULL)
   {
     cout << "Problem opening the input file" << endl;

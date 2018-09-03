@@ -7,6 +7,7 @@
 #include<string>
 #include<utility>
 #include<ctime>
+#include<vector>
 
 using namespace std;
 
@@ -37,14 +38,15 @@ void free_PortSet(Port *portSet);
 void free_TSPDL(TSPDL *tspdl);
 
 // file functions
-TSPDL* import_data(string inFile);
+TSPDL* import_data(string inFile, int inputFile_type);
 int export_data(string outFile, string inFile, pair<int*, int> route, double prog_time);
+const vector<string> split(const string& s, const char& delimiter);
 
 // greedy functions
 pair<int*,int> greedy_algorithm(TSPDL *tspdl, int L);
 int getNext(TSPDL *tspdl, int Li, int current);
 
 // TSPDL functions
-int make_greedy_trade(string inFile, string outFile);
+int make_greedy_trade(string inFile, string outFile, int inputFile_type);
 
 #endif //ARQUIVOS_H_INCLUDED

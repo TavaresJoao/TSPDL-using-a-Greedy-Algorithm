@@ -30,6 +30,7 @@ pair<int*,int> greedy_algorithm(TSPDL *tspdl, int L0)
 
     rota.first[cont++]=i;
   }
+  rota.second += tspdl->c[i][0];
 
   return rota;
 }
