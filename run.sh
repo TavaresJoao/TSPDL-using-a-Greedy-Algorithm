@@ -12,7 +12,7 @@ do
   for x in $y/*
   do
     echo $x;
-    ./main $x Outputs/myoutput_0.out 0
+    ./main $x Respostas/myoutput_0.out 0
   done
 done
 
