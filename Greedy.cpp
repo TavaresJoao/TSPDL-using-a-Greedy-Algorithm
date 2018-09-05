@@ -19,7 +19,7 @@ pair<int*,int> greedy_algorithm(TSPDL *tspdl, int L0)
   while(Li!=0)
   {
     //cout << "Porto atual: " << i <<  '\t' << "Carga atual: " << Li << endl;
-    j = getNext(tspdl, Li, i);
+    j = getNext_greedy(tspdl, Li, i);
 
     tspdl->setPorts[i].was_visited = 1;
     Li -= tspdl->setPorts[j].demand;
@@ -40,7 +40,7 @@ pair<int*,int> greedy_algorithm(TSPDL *tspdl, int L0)
 *   Li - é carga no navio
 *   current - é o porto atual
 */
-int getNext(TSPDL *tspdl, int Li, int current)
+int getNext_greedy(TSPDL *tspdl, int Li, int current)
 {
   int i, j, menor=INFINITE;
 

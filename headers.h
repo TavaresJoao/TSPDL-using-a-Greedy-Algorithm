@@ -44,7 +44,7 @@ const vector<string> split(const string& s, const char& delimiter);
 
 // greedy functions
 pair<int*,int> greedy_algorithm(TSPDL *tspdl, int L);
-int getNext(TSPDL *tspdl, int Li, int current);
+int getNext_greedy(TSPDL *tspdl, int Li, int current);
 
 // TSPDL functions
 int make_greedy_trade(string inFile, string outFile, int inputFile_type);
