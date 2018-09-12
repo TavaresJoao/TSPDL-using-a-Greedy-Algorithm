@@ -1,21 +1,17 @@
 #include "headers.h"
 
-#define INFINITE 99999
-
 //o guloso retorna a rota e o custo da rota
-pair<int*,int> greedy_algorithm(TSPDL *tspdl, int L0)
+pair<vector<int>, int> greedy_algorithm(TSPDL *tspdl, int L0)
 {
   // Li é a carga do navio ao entrar no porto i
   // i porto de origem
   // j porto de destino
   //cout << "Start greedy_algorithm" << endl;
-  int i=0, j, Li=L0, cont=0;
-  pair<int*,int> rota;// first-route; second-cost
+  int i=0, j, Li=L0;
 
+  pair<vector<int>, int> rota;// first: route; second: cost
   rota.second = 0;
-  rota.first = create_Vector(tspdl->N);
-
-  rota.first[cont++]=i;
+  rota.first.push_back(i);
   while(Li!=0)
   {
     //cout << "Porto atual: " << i <<  '\t' << "Carga atual: " << Li << endl;
@@ -28,7 +24,7 @@ pair<int*,int> greedy_algorithm(TSPDL *tspdl, int L0)
 
     i=j;
 
-    rota.first[cont++]=i;
+    rota.first.push_back(i);
   }
   rota.second += tspdl->c[i][0];
 
