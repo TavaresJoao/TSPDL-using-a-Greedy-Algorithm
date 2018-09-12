@@ -127,7 +127,7 @@ TSPDL* import_data(string inFile, int inputFile_type)
 }
 
 // write in a output file the solucions and the execution time (s) of an input instance file
-int export_data(string outFile, string inFile, pair<int*, int> route, double prog_time)
+int export_data(string outFile, string inFile, pair<vector<int>, int> route, double prog_time)
 {
   ofstream myoutput;
   // std::ios::app is the open mode "append" meaningi new data will be written
