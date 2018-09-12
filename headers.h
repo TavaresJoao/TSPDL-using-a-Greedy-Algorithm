@@ -11,6 +11,8 @@
 
 using namespace std;
 
+#define INFINITE 99999
+
 typedef struct
 {
   int demand;       // demand associated to the port
@@ -39,14 +41,19 @@ void free_TSPDL(TSPDL *tspdl);
 
 // file functions
 TSPDL* import_data(string inFile, int inputFile_type);
-int export_data(string outFile, string inFile, pair<int*, int> route, double prog_time);
+int export_data(string outFile, string inFile, pair<vector<int>, int> route, double prog_time);
 const vector<string> split(const string& s, const char& delimiter);
 
 // greedy functions
-pair<int*,int> greedy_algorithm(TSPDL *tspdl, int L);
+pair<vector<int>, int> greedy_algorithm(TSPDL *tspdl, int L0);
 int getNext_greedy(TSPDL *tspdl, int Li, int current);
+
+// random functions
+pair<vector<int>, int> random_algorithm(TSPDL *tspdl, int L0);
+int getNext_random(TSPDL *tspdl, int Li, int current);
 
 // TSPDL functions
 int make_greedy_trade(string inFile, string outFile, int inputFile_type);
+int make_random_trade(string inFile, string outFile, int inputFile_type);
 
 #endif //ARQUIVOS_H_INCLUDED
