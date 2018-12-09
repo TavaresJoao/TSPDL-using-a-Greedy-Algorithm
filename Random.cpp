@@ -49,6 +49,14 @@ int getNext_random(TSPDL *tspdl, int Li, int current)
 
   srand( time(NULL) );
   int p1 = rand()%(tspdl->N);
+
+  while(  !(Li <= tspdl->setPorts[p1].draft && tspdl->setPorts[p1].was_visited==0
+          && p1!=current))
+    p1 = rand()%(tspdl->N);
+
+  return p1;
+
+  /*
   int p2 = rand()%(tspdl->N);
   int p3 = rand()%(tspdl->N);
 
@@ -88,4 +96,5 @@ int getNext_random(TSPDL *tspdl, int Li, int current)
 
     return j;
   }
+  */
 }

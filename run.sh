@@ -5,7 +5,8 @@ g++ -c Greedy.cpp
 g++ -c main.cpp
 g++ -c TSPDL.cpp
 g++ -c Random.cpp
-g++ -o main allocation.o file.o Greedy.o main.o TSPDL.o Random.o
+g++ -c LocalSearch.cpp
+g++ -o main allocation.o file.o Greedy.o main.o TSPDL.o Random.o LocalSearch.o
 
 for y in Instances/TSPDL_Instances/*
 do

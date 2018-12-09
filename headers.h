@@ -55,5 +55,9 @@ int getNext_random(TSPDL *tspdl, int Li, int current);
 // TSPDL functions
 int make_greedy_trade(string inFile, string outFile, int inputFile_type);
 int make_random_trade(string inFile, string outFile, int inputFile_type);
+int make_local_search(string inFile, string outFile, int inputFile_type);
+
+// LocalSearch functions
+pair<vector<int>, int> sophistication_2opt(TSPDL *tspdl, int L0, pair<vector<int>, int> initial_solution);
 
 #endif //ARQUIVOS_H_INCLUDED

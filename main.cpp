@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
   */
   if(argc == 4)
   {
-    return make_random_trade(argv[1], argv[2], stoi(argv[3]));
+    return make_local_search(argv[1], argv[2], stoi(argv[3]));
   }
 
   return 0;
